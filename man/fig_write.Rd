@@ -4,19 +4,23 @@
 \alias{fig_write}
 \title{Write a file including list of links, figures and labels}
 \usage{
-fig_write(tbl, filename)
+fig_write(tbl, filename, author = NULL, date = NULL)
 }
 \arguments{
 \item{tbl}{A data.frame with full paths, links and labels}
 
 \item{filename}{A path to a directory of image files}
+
+\item{author}{Author text for output file}
+
+\item{date}{Date text for output file}
 }
 \value{
 Returns tbl, side effect is to write output.
 }
 \description{
 This function is given a data.frame of filenames, links and labels. It writes out
-a mardkdown, pdf or html file includign the figures, labels and a table
+a mardkdown, pdf or html file including the figures, labels and a table
 of links
 }
 \examples{
