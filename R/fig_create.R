@@ -2,12 +2,13 @@
 #'
 #' This fucntion is given either a list of filenames or pointed to a directory.
 #' It will creat a table with formatted link and label text for inclusion
-#' in a RMarkdown document.
+#' in a RMarkdown document. Filenames are filtered to only include those
+#' with specified file extensions.
 #'
 #' @param filenames A character vector of filenames
 #' @param dir A path to a directory of image files
 #' @param desc If TRUE table is sorted on descending filename or sort key
-
+#' @param extensions Regex to screen file extensions
 #' @return Returns a table with column of text links and text labels.
 #'
 #' @examples
@@ -17,14 +18,29 @@
 #'
 
 fig_create <- function(filenames = NULL,
-           dir = NULL,
-           desc = FALSE){
-  if (!xor(is.null(filenames), is.null(dir))){
+                       dir = NULL,
+                       desc = FALSE,
+                       extensions = ".(pdf|png)$") {
+  if (!xor(is.null(filenames), is.null(dir))) {
     stop("Either filenames OR dir must be specified, not both")
   }
-  if (!is.null(dir)){
-    filenames = fs::dir_ls(dir)
+  if (length(dir) > 1) {
+    stop("dir should be length 1 - have you given filenames instead?")
   }
-  filenames
-}
+  if (!is.null(dir)) {
+    filenames <- fs::dir_ls(dir)
+  }
+  filenames <- filenames[stringr::str_detect(filenames, extensions)]
+  filenames_short <- fs::path_file(filenames)
+  tbl <- tibble::tibble(filenames, filenames_short) %>%
+    dplyr::mutate(index = seq_along(filenames),
+                  link = glue::glue_data(.,
+                                         "[link](link_{index})"),
+                  label = glue::glue_data(.,
+                                          "<a id=\"link_{index}\"></a>"))
 
+
+  # cat("<a id=\"plot", ii, "\"></a>", sep = "")
+
+  tbl
+}

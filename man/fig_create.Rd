@@ -4,7 +4,8 @@
 \alias{fig_create}
 \title{Create a label and link table from a file list or directory}
 \usage{
-fig_create(filenames = NULL, dir = NULL, desc = FALSE)
+fig_create(filenames = NULL, dir = NULL, desc = FALSE,
+  extensions = ".(pdf|png)$")
 }
 \arguments{
 \item{filenames}{A character vector of filenames}
@@ -12,6 +13,8 @@ fig_create(filenames = NULL, dir = NULL, desc = FALSE)
 \item{dir}{A path to a directory of image files}
 
 \item{desc}{If TRUE table is sorted on descending filename or sort key}
+
+\item{extensions}{Regex to screen file extensions}
 }
 \value{
 Returns a table with column of text links and text labels.
@@ -19,7 +22,8 @@ Returns a table with column of text links and text labels.
 \description{
 This fucntion is given either a list of filenames or pointed to a directory.
 It will creat a table with formatted link and label text for inclusion
-in a RMarkdown document.
+in a RMarkdown document. Filenames are filtered to only include those
+with specified file extensions.
 }
 \examples{
 \dontrun{
