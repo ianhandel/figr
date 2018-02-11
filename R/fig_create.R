@@ -37,7 +37,12 @@ fig_create <- function(filenames = NULL,
                   link = glue::glue_data(.,
                                          "[link](link_{index})"),
                   label = glue::glue_data(.,
-                                          "<a id=\"link_{index}\"></a>"))
+                                          "<a id=\"link_{index}\"></a>")) %>%
+    dplyr::arrange(filenames)
+
+  if (desc) {
+    tbl <- dplyr::arrange(tbl, dplyr::desc(filenames))
+  }
 
 
   # cat("<a id=\"plot", ii, "\"></a>", sep = "")
