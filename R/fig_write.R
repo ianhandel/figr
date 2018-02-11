@@ -19,6 +19,7 @@
 fig_write <- function(tbl, filename,
                       author = NULL,
                       date = NULL){
+  if (fs::file_exists(filename)) stop(glue::glue("{filename} already exists)"))
 
   # markdown file headers
   fs::file_create(filename)
