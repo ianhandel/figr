@@ -14,7 +14,7 @@ fig_create(filenames = NULL, dir = NULL, desc = FALSE,
 
 \item{desc}{If TRUE table is sorted on descending filename or sort key}
 
-\item{extensions}{Regex to screen file extensions}
+\item{extensions}{Regex to filter file extensions}
 }
 \value{
 Returns a table with column of text links and text labels.
