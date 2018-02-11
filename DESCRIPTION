@@ -1,6 +1,6 @@
 Package: figr
 Version: 0.0.0.9000
-Title: Tools to inject a directory of figures into md/pdf/html and refence them.
+Title: Tools to inject a directory of figures into md/pdf/html and refence them
 Description: Tools to inject a directory of figures into md/pdf/html and refence them.
 Authors@R: person("Ian", "Handel", , "ianhandel@hotmail.com", c("aut", "cre"))
 License: MIT + file LICENSE
@@ -13,6 +13,8 @@ Imports:
     knitr,
     magrittr,
     fs,
-    glue
+    glue,
+    tibble,
+    stringr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
