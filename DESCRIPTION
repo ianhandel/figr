@@ -1,9 +1,13 @@
 Package: figr
 Version: 0.0.0.9000
-Title: What the Package Does (one line, title case)
-Description: What the package does (one paragraph).
-Authors@R: person("First", "Last", , "first.last@example.com", c("aut", "cre"))
-License: What license it uses
+Title: Tools to inject a directory of figures into md/pdf/html and refence them.
+Description:
+Authors@R: person("Ian", "Handel", , "ianhandel@hotmail.com", c("aut", "cre"))
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
+Imports:
+    dplyr,
+    rmarkdown,
+    knitr
