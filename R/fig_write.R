@@ -21,13 +21,19 @@ fig_write <- function(tbl, filename,
                       date = NULL){
   if (fs::file_exists(filename)) stop(glue::glue("{filename} already exists)"))
 
-  # Rmarkdown file headers
+  # write tbl to temporay file
+  tempfile <- fs::file_temp()
+  readr::write_rds(tbl, path = tempfile)
+
+
   fs::file_create(filename)
 
   # shortcut function to glue and write out
   wr <- function(str){
     readr::write_lines(path = filename, glue::glue(str), append = TRUE)
   }
+
+  # Rmarkdown file headers
 
   wr("---")
   if (!is.null(author)){
@@ -36,11 +42,28 @@ fig_write <- function(tbl, filename,
   if (!is.null(date)){
     wr("date: \"{date}\"")
   }
-  wr("output: md_document")
+  wr("output: html_document")
   wr("---")
 
+  # read in figure table
 
+  wr("``` {{r}}")
+  wr("tbl <- readr::read_rds(\"{tempfile}\")")
+  wr("```")
 
+  # writes out figure table
+  wr("``` {{r, tidy = FALSE}}")
+  wr("knitr::kable(tbl)")
+  wr("```")
 
+  # writes out figure labels and plots
+  for(ii in seq_along(tbl$filenames)){
+    wr("```{{r, results='asis', tidy=FALSE}}")
+    wr("cat('{tbl$label[[ii]]}')")
+    wr("```")
+    wr("```{{r, fig.height = 4, fig.width = 4}}")
+    wr('knitr::include_graphics(path = "{tbl$filenames[[ii]]}")')
+    wr("```")
+  }
 }
 
