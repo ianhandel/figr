@@ -21,17 +21,26 @@ fig_write <- function(tbl, filename,
                       date = NULL){
   if (fs::file_exists(filename)) stop(glue::glue("{filename} already exists)"))
 
-  # markdown file headers
+  # Rmarkdown file headers
   fs::file_create(filename)
-  readr::write_lines(path = filename, "---", append = TRUE)
+
+  # shortcut function to glue and write out
+  wr <- function(str){
+    readr::write_lines(path = filename, glue::glue(str), append = TRUE)
+  }
+
+  wr("---")
   if (!is.null(author)){
-    readr::write_lines(path = filename, "author: \"{author}\"", append = TRUE)
+    wr("author: \"{author}\"")
   }
   if (!is.null(date)){
-    readr::write_lines(path = filename, "date: \"{date}\"", append = TRUE)
+    wr("date: \"{date}\"")
   }
-  readr::write_lines(path = filename, "output: md_document", append = TRUE)
-  readr::write_lines(path = filename, "---", append = TRUE)
+  wr("output: md_document")
+  wr("---")
+
+
+
 
 }
 
