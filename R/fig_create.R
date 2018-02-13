@@ -21,7 +21,7 @@
 fig_create <- function(filenames = NULL,
                        dir = NULL,
                        desc = FALSE,
-                       extensions = ".(pdf|png)$") {
+                       extensions = ".(tif|png)$") {
   if (!xor(is.null(filenames), is.null(dir))) {
     stop("Either filenames OR dir must be specified, not both")
   }
@@ -34,13 +34,19 @@ fig_create <- function(filenames = NULL,
 
   filenames <- filenames[stringr::str_detect(filenames, extensions)]
   filenames_short <- fs::path_file(filenames)
-#
+  #
   tbl <- tibble::tibble(filenames, filenames_short) %>%
-    dplyr::mutate(index = seq_along(filenames),
-                  link = glue::glue_data(.,
-                                         "[link{index}](#link_{index})"),
-                  label = glue::glue_data(.,
-                                          "<a id=\"link_{index}\"></a>")) %>%
+    dplyr::mutate(
+      index = seq_along(filenames),
+      link = glue::glue_data(
+        .,
+        "[link{index}](#link_{index})"
+      ),
+      label = glue::glue_data(
+        .,
+        "<a id=\"link_{index}\"></a>"
+      )
+    ) %>%
     dplyr::arrange(filenames)
 
   if (desc) {
