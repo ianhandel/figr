@@ -31,7 +31,9 @@ fig_figure <- function(figr_tbl, index, pagebreak = TRUE){
 
   cat(figr_tbl$label[[index]])
 
-  cat("![](", figr_tbl$filenames[[index]],"){ width=90%}")
+  cat("![](", figr_tbl$filenames[[index]],")")
+
+  cat("\n")
 }
 
 
