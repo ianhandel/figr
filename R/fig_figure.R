@@ -32,7 +32,7 @@ fig_figure <- function(figr_tbl, index,
 
   if (index > nrow(figr_tbl)) stop("Index is greater than table length")
 
-  if (pagebreak) cat("\\newpage", )
+  if (pagebreak) cat("\\newpage")
 
   if (add_titles) cat("##", figr_tbl$filename_short[[index]])
 
