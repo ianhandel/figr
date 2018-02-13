@@ -23,5 +23,5 @@ fig_convert <- function(dir, silent = TRUE) {
 convert <- function(filename) {
   img <- magick::image_read(filename)
   filename <- fs::path_ext_set(filename, "tif")
-  magick::image_write(img, filename)
+  magick::image_write(img, filename, format = "tif")
 }
