@@ -4,7 +4,7 @@
 #' to 'home'. Likely to be used to give a return location from
 #' figures,
 #'
-#' @param label
+#' @param label The label tag
 #' @return Returns nothing, sideeffect is printing label
 #' @export
 #'
