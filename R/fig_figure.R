@@ -18,7 +18,10 @@
 #' }
 #'
 
-fig_figure <- function(figr_tbl, index, width = 70, pagebreak = TRUE) {
+fig_figure <- function(figr_tbl, index,
+                       width = 70,
+                       add_title = FALSE,
+                       pagebreak = TRUE) {
   if (length(index) > 1) stop("Can only do one figure at a time right now")
 
   if (is.character(index)) {
