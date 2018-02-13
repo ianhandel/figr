@@ -32,9 +32,6 @@ fig_create <- function(filenames = NULL,
     filenames <- fs::dir_ls(dir)
   }
 
-  ## quiets concerns of R CMD check re: the .'s that appear in pipelines
-  if(getRversion() >= "2.15.1")  utils::globalVariables(c("."))
-
   filenames <- filenames[stringr::str_detect(filenames, extensions)]
   filenames_short <- fs::path_file(filenames)
 #
