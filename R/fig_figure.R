@@ -16,22 +16,20 @@
 #' }
 #'
 
-fig_figure <- function(figr_tbl, index, pagebreak = TRUE){
+fig_figure <- function(figr_tbl, index, pagebreak = TRUE) {
   if (length(index) > 1) stop("Can only do one figure at a time right now")
 
-  if (is.character(index)){
+  if (is.character(index)) {
     index <- match(index, figr_tbl[["filenames_short"]])
   }
 
-  if(is.na(index)) stop("Figure not found")
+  if (is.na(index)) stop("Figure not found")
 
-  if(index > nrow(figr_tbl)) stop("Index is greater than table length")
+  if (index > nrow(figr_tbl)) stop("Index is greater than table length")
 
-  if(pagebreak) cat("\\newpage")
+  if (pagebreak) cat("\\newpage")
 
   cat(figr_tbl$label[[index]])
 
-  cat("![](", figr_tbl$filenames[[index]],")")
+  cat("![](", figr_tbl$filenames[[index]], ")")
 }
-
-
