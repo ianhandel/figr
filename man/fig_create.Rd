@@ -5,7 +5,7 @@
 \title{Create a label and link table from a file list or directory}
 \usage{
 fig_create(filenames = NULL, dir = NULL, desc = FALSE,
-  extensions = ".(pdf|png)$")
+  extensions = ".(tif|png)$")
 }
 \arguments{
 \item{filenames}{A character vector of filenames}
