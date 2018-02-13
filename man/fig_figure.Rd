@@ -17,6 +17,7 @@ Returns nothing, sideeffect is inserting figure
 \description{
 This function is given a figr table and an index or short filename
 and will then insert the corresponding figure into the html document
+together with a label to permit linking.
 }
 \examples{
 \dontrun{

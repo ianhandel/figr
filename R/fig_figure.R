@@ -2,6 +2,7 @@
 #'
 #' This function is given a figr table and an index or short filename
 #' and will then insert the corresponding figure into the html document
+#' together with a label to permit linking.
 #'
 #' @param tbl A figr table
 #' @param x Either an integer index or short filename
@@ -24,6 +25,8 @@ fig_figure <- function(figr_tbl, index){
   if(is.na(index)) stop("Figure not found")
 
   if(index > nrow(figr_tbl)) stop("Index is greater than table length")
+
+  cat(figr_tbl$label[[index]])
 
   cat("![](", figr_tbl$filenames[[index]],")")
 }
