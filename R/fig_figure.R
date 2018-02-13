@@ -29,6 +29,8 @@ fig_figure <- function(figr_tbl, index, pagebreak = TRUE){
 
   if(pagebreak) cat("\\newpage")
 
+  cat("\n")
+
   cat(figr_tbl$label[[index]])
 
   cat("![](", figr_tbl$filenames[[index]],")")
