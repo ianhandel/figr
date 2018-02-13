@@ -49,8 +49,5 @@ fig_create <- function(filenames = NULL,
     tbl <- dplyr::arrange(tbl, dplyr::desc(filenames))
   }
 
-
-  # cat("<a id=\"plot", ii, "\"></a>", sep = "")
-
   tbl
 }
