@@ -16,7 +16,8 @@ Imports:
     glue,
     tibble,
     stringr,
-    readr
+    readr,
+    purrr
 Suggests:
     magick
 Roxygen: list(markdown = TRUE)
