@@ -32,5 +32,5 @@ fig_figure <- function(figr_tbl, index, pagebreak = TRUE) {
   cat(figr_tbl$label[[index]])
 
   # cat("![](", figr_tbl$filenames[[index]], ")")
-  cat('<img src="file://', figr_tbl$filenames[[index]], '" alt="image" style="width: 200px;"/>')
+  cat('<img src=file:/"', figr_tbl$filenames[[index]], '" alt="image" style="width: 200px;"/>')
 }
