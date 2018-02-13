@@ -10,6 +10,7 @@
 #' @param desc If TRUE table is sorted on descending filename or sort key
 #' @param extensions Regex to filter file extensions
 #' @return Returns a table with column of text links and text labels.
+#' @export
 #'
 #' @examples
 #' \dontrun{
