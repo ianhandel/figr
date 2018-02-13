@@ -14,13 +14,16 @@
 #' }
 #'
 
-fig_table <- function(fig_tbl, show_all = FALSE){
-  if (show_all){
+fig_table <- function(fig_tbl, show_all = FALSE) {
+  if (show_all) {
     knitr::kable(fig_tbl)
-  }else{
-    knitr::kable(dplyr::select(dplyr::rename(fig_tbl,
-                                             file = filenames_short),
-                               -filenames))
+  } else {
+    knitr::kable(dplyr::select(
+      dplyr::rename(
+        fig_tbl,
+        file = filenames_short
+      ),
+      -filenames
+    ))
   }
 }
-

@@ -15,7 +15,7 @@
 #'
 
 
-fig_label <- function(label = "home"){
+fig_label <- function(label = "home") {
   cat(glue::glue('<a id=\"{label}\"></a>'))
 }
 
@@ -39,7 +39,7 @@ fig_label <- function(label = "home"){
 #'
 
 
-fig_link <- function(label = "home", text = "back", newline = TRUE){
-  if(newline) cat("\n")
-  cat(glue::glue('[{text}](#{label})'))
+fig_link <- function(label = "home", text = "back", newline = TRUE) {
+  if (newline) cat("\n")
+  cat(glue::glue("[{text}](#{label})"))
 }
