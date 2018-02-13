@@ -4,12 +4,14 @@
 \alias{fig_figure}
 \title{Insert a figure from a figr table}
 \usage{
-fig_figure(figr_tbl, index, pagebreak = TRUE)
+fig_figure(figr_tbl, index, width = 70, pagebreak = TRUE)
 }
 \arguments{
 \item{figr_tbl}{A figr table}
 
 \item{index}{Either an integer index or short filename}
+
+\item{width}{Figure width as % of page}
 
 \item{pagebreak}{If TRUE inserts pagebreak before figure}
 }

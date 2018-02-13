@@ -6,6 +6,7 @@
 #'
 #' @param figr_tbl A figr table
 #' @param index Either an integer index or short filename
+#' @param width Figure width as % of page
 #' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
 #' @export
@@ -16,7 +17,7 @@
 #' }
 #'
 
-fig_figure <- function(figr_tbl, index, pagebreak = TRUE) {
+fig_figure <- function(figr_tbl, index, width = 70, pagebreak = TRUE) {
   if (length(index) > 1) stop("Can only do one figure at a time right now")
 
   if (is.character(index)) {
@@ -31,5 +32,5 @@ fig_figure <- function(figr_tbl, index, pagebreak = TRUE) {
 
   cat(figr_tbl$label[[index]])
 
-  cat("![](", figr_tbl$filenames[[index]], "){ width=50% }", sep = "")
+  cat("![](", figr_tbl$filenames[[index]], "){ width=", width, "% }", sep = "")
 }
