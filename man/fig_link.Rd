@@ -4,12 +4,14 @@
 \alias{fig_link}
 \title{Create a named link - defaults to 'home'}
 \usage{
-fig_link(label = "home", text = "back")
+fig_link(label = "home", text = "back", newline = TRUE)
 }
 \arguments{
 \item{label}{The link tag}
 
 \item{text}{The text to display (deafults to 'back')}
+
+\item{newline}{If TRUE inserts newline before link}
 }
 \value{
 Returns nothing, sideeffect is printing link

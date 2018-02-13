@@ -28,6 +28,7 @@ fig_label <- function(label = "home"){
 #'
 #' @param label The link tag
 #' @param text The text to display (deafults to 'back')
+#' @param newline If TRUE inserts newline before link
 #' @return Returns nothing, sideeffect is printing link
 #' @export
 #'
@@ -38,6 +39,7 @@ fig_label <- function(label = "home"){
 #'
 
 
-fig_link <- function(label = "home", text = "back"){
+fig_link <- function(label = "home", text = "back", newline = TRUE){
+  if(newline) cat("\n")
   cat(glue::glue('[{text}](#{label})'))
 }

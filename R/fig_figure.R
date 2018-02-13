@@ -6,6 +6,7 @@
 #'
 #' @param tbl A figr table
 #' @param x Either an integer index or short filename
+#' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
 #' @export
 #'
@@ -15,7 +16,7 @@
 #' }
 #'
 
-fig_figure <- function(figr_tbl, index){
+fig_figure <- function(figr_tbl, index, pagebreak = TRUE){
   if (length(index) > 1) stop("Can only do one figure at a time right now")
 
   if (is.character(index)){
@@ -25,6 +26,8 @@ fig_figure <- function(figr_tbl, index){
   if(is.na(index)) stop("Figure not found")
 
   if(index > nrow(figr_tbl)) stop("Index is greater than table length")
+
+  if(pagebreak) cat("\\newpage")
 
   cat(figr_tbl$label[[index]])
 

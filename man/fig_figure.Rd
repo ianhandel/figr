@@ -4,9 +4,11 @@
 \alias{fig_figure}
 \title{Insert a figure from a figr table}
 \usage{
-fig_figure(figr_tbl, index)
+fig_figure(figr_tbl, index, pagebreak = TRUE)
 }
 \arguments{
+\item{pagebreak}{If TRUE inserts pagebreak before figure}
+
 \item{tbl}{A figr table}
 
 \item{x}{Either an integer index or short filename}
