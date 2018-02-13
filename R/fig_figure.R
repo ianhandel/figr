@@ -5,7 +5,7 @@
 #' together with a label to permit linking.
 #'
 #' @param figr_tbl A figr table
-#' @param x Either an integer index or short filename
+#' @param index Either an integer index or short filename
 #' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
 #' @export

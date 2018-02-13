@@ -9,9 +9,9 @@ fig_figure(figr_tbl, index, pagebreak = TRUE)
 \arguments{
 \item{figr_tbl}{A figr table}
 
-\item{pagebreak}{If TRUE inserts pagebreak before figure}
+\item{index}{Either an integer index or short filename}
 
-\item{x}{Either an integer index or short filename}
+\item{pagebreak}{If TRUE inserts pagebreak before figure}
 }
 \value{
 Returns nothing, sideeffect is inserting figure
