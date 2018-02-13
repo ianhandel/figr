@@ -34,7 +34,7 @@ fig_figure <- function(figr_tbl, index,
 
   if (pagebreak) cat("\\newpage")
 
-  if (add_titles) cat("##", figr_tbl$filename_short[[index]])
+  if (add_titles) cat("##", figr_tbl$filenames_short[[index]])
 
   cat(figr_tbl$label[[index]])
 
