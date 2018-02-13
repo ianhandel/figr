@@ -38,7 +38,7 @@ fig_create <- function(filenames = NULL,
   tbl <- tibble::tibble(filenames, filenames_short) %>%
     dplyr::mutate(index = seq_along(filenames),
                   link = glue::glue_data(.,
-                                         "[link{index}](link_{index})"),
+                                         "[link{index}](#link_{index})"),
                   label = glue::glue_data(.,
                                           "<a id=\"link_{index}\"></a>")) %>%
     dplyr::arrange(filenames)
