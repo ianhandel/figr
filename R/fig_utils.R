@@ -18,3 +18,26 @@
 fig_label <- function(label = "home"){
   cat(glue::glue('<a id=\"{label}\"></a>'))
 }
+
+
+#' Create a named link - defaults to 'home'
+#'
+#' This function creates a link tag manually, defaulting
+#' to 'home'. Likely to be used to give a return link from
+#' figures,
+#'
+#' @param label The link tag
+#' @param text The text to display (deafults to 'back')
+#' @return Returns nothing, sideeffect is printing link
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' fig_link()
+#' }
+#'
+
+
+fig_link <- function(label = "home", text = "back"){
+  cat(glue::glue('[{text}](#{label})'))
+}

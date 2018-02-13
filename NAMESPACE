@@ -2,4 +2,6 @@
 
 export("%>%")
 export(fig_create)
+export(fig_label)
+export(fig_link)
 importFrom(magrittr,"%>%")
