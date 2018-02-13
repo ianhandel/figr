@@ -7,9 +7,9 @@
 fig_figure(figr_tbl, index, pagebreak = TRUE)
 }
 \arguments{
-\item{pagebreak}{If TRUE inserts pagebreak before figure}
+\item{figr_tbl}{A figr table}
 
-\item{tbl}{A figr table}
+\item{pagebreak}{If TRUE inserts pagebreak before figure}
 
 \item{x}{Either an integer index or short filename}
 }

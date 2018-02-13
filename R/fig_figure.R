@@ -4,7 +4,7 @@
 #' and will then insert the corresponding figure into the html document
 #' together with a label to permit linking.
 #'
-#' @param tbl A figr table
+#' @param figr_tbl A figr table
 #' @param x Either an integer index or short filename
 #' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
