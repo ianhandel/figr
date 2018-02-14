@@ -56,3 +56,8 @@ fig_create <- function(filenames = NULL,
 
   tbl
 }
+
+# <a name="top"></a>
+
+
+# <a href="#top">link to top</a>
