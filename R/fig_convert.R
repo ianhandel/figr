@@ -11,6 +11,12 @@
 #'
 
 fig_convert <- function(dir, silent = TRUE) {
+
+  if (!requireNamespace("magick", quietly = TRUE)) {
+    stop("Package <magick> needed for this function to work. Please install it.",
+         call. = FALSE)
+  }
+
   if (length(dir) > 1) {
     stop("dir should be length 1 - have you given filenames instead?")
   }
