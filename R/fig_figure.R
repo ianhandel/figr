@@ -36,7 +36,10 @@ fig_figure <- function(figr_tbl, index,
 
   if (add_titles) cat("\n\n##", figr_tbl$filenames_short[[index]])
 
+  cat("\n")
   cat(figr_tbl$label[[index]])
+  cat("\n")
+
 
   cat("![](", figr_tbl$filenames[[index]], "){ width=", width, "% }", sep = "")
 }
