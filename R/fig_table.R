@@ -15,6 +15,12 @@
 #'
 
 fig_table <- function(fig_tbl, show_all = FALSE) {
+
+  # prevent global var issue
+  label <- NA
+  filenames <- NA
+  filenames_short <- NA
+
   fig_tbl <- dplyr::select(fig_tbl, -label)
   if (show_all) {
     knitr::kable(fig_tbl)

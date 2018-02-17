@@ -22,6 +22,11 @@ fig_create <- function(filenames = NULL,
                        dir = NULL,
                        desc = FALSE,
                        extensions = ".(tif|png)$") {
+
+  # prevent global var warnings
+  `.` <- NA
+  index <- NA
+
   if (!xor(is.null(filenames), is.null(dir))) {
     stop("Either filenames OR dir must be specified, not both")
   }

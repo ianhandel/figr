@@ -1,4 +1,4 @@
-#' Insert a figure from a figr table
+#' Insert a figure from a figr table.
 #'
 #' This function is given a figr table and an index or short filename
 #' and will then insert the corresponding figure into the html document
@@ -11,12 +11,7 @@
 #' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#' fig_figure(tbl, 7)
-#' }
-#'
+
 
 fig_figure <- function(figr_tbl, index,
                        width = 70,

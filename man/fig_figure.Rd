@@ -2,7 +2,7 @@
 % Please edit documentation in R/fig_figure.R
 \name{fig_figure}
 \alias{fig_figure}
-\title{Insert a figure from a figr table}
+\title{Insert a figure from a figr table.}
 \usage{
 fig_figure(figr_tbl, index, width = 70, add_titles = FALSE,
   pagebreak = TRUE)
@@ -25,10 +25,4 @@ Returns nothing, sideeffect is inserting figure
 This function is given a figr table and an index or short filename
 and will then insert the corresponding figure into the html document
 together with a label to permit linking.
-}
-\examples{
-\dontrun{
-fig_figure(tbl, 7)
-}
-
 }
