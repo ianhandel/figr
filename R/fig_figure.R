@@ -6,14 +6,15 @@
 #'
 #' @param figr_tbl A figr table
 #' @param index Either an integer index or short filename
-#' @param width Figure width as % of page
+#' @param width Figure width as \% of page
 #' @param add_titles If TRUE adds filenames
 #' @param pagebreak If TRUE inserts pagebreak before figure
 #' @return Returns nothing, sideeffect is inserting figure
 #' @export
 
 
-fig_figure <- function(figr_tbl, index,
+fig_figure <- function(figr_tbl,
+                       index,
                        width = 70,
                        add_titles = FALSE,
                        pagebreak = TRUE) {

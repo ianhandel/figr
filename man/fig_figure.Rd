@@ -12,7 +12,7 @@ fig_figure(figr_tbl, index, width = 70, add_titles = FALSE,
 
 \item{index}{Either an integer index or short filename}
 
-\item{width}{Figure width as % of page}
+\item{width}{Figure width as \% of page}
 
 \item{add_titles}{If TRUE adds filenames}
 

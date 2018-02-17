@@ -17,6 +17,7 @@
 fig_table <- function(fig_tbl, show_all = FALSE) {
 
   # prevent global var issue
+  index <- NA
   label <- NA
   filenames <- NA
   filenames_short <- NA
