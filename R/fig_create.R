@@ -45,7 +45,7 @@ fig_create <- function(filenames = NULL,
       ),
       label = glue::glue_data(
         .,
-        "<a name=\"link{index}\"></a>"
+        "<a id=\"link{index}\"></a>"
       )
     ) %>%
     dplyr::arrange(filenames)
