@@ -14,7 +14,7 @@
 #'
 
 
-fig_html2pdf <- function(filename){
+fig_html2pdf <- function(filename) {
   if (fs::path_ext(filename) != "html") stop("Needs an html file")
   output <- fs::path_ext_set(filename, "pdf")
   system(glue::glue("pandoc -s {filename} -o {output}"))

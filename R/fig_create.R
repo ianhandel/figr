@@ -56,5 +56,3 @@ fig_create <- function(filenames = NULL,
 
   tbl
 }
-
-

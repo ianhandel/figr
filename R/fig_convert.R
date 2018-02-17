@@ -11,10 +11,11 @@
 #'
 
 fig_convert <- function(dir, silent = TRUE) {
-
   if (!requireNamespace("magick", quietly = TRUE)) {
-    stop("Package <magick> needed for this function to work. Please install it.",
-         call. = FALSE)
+    stop(
+      "Package <magick> needed for this function to work. Please install it.",
+      call. = FALSE
+    )
   }
 
   if (length(dir) > 1) {
@@ -23,7 +24,7 @@ fig_convert <- function(dir, silent = TRUE) {
 
   pdfs <- fs::dir_ls(dir, glob = "*.pdf")
   purrr::walk(pdfs, convert)
-  if(!silent) print(pdfs)
+  if (!silent) print(pdfs)
 }
 
 convert <- function(filename) {
