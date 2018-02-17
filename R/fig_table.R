@@ -21,7 +21,7 @@ fig_table <- function(fig_tbl, show_all = FALSE) {
   filenames <- NA
   filenames_short <- NA
 
-  fig_tbl <- dplyr::select(fig_tbl, -label)
+  fig_tbl <- dplyr::select(fig_tbl, -label, -index)
   if (show_all) {
     knitr::kable(fig_tbl)
   } else {
