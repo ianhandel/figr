@@ -37,8 +37,8 @@ fig_create <- function(filenames = NULL,
   #
   tbl <- tibble::tibble(filenames, filenames_short) %>%
     dplyr::mutate(
-      index = seq_along(filenames),
-      index = stringr::str_pad(index, 3, "left", 0),
+      ii = seq_along(filenames),
+      index = purrr::map_chr(ii, ~LETTERS[.x]),
       link = glue::glue_data(
         .,
         "<a href=\"#bookmark{index}\">Go to figure {index}</a>"
