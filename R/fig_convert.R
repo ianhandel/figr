@@ -1,6 +1,6 @@
-#' Convert pdfs to tifs for rendering
+#' Convert pdfs to pngs for rendering
 #'
-#' Given a directory will convert all pdf's to tif's to
+#' Given a directory will convert all pdf's to pngs's to
 #' allow RMarkdown rendering to look pretty. Requires the
 #' R magick package to work.
 #'

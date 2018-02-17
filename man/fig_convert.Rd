@@ -2,7 +2,7 @@
 % Please edit documentation in R/fig_convert.R
 \name{fig_convert}
 \alias{fig_convert}
-\title{Convert pdfs to tifs for rendering}
+\title{Convert pdfs to pngs for rendering}
 \usage{
 fig_convert(dir, silent = TRUE)
 }
@@ -15,7 +15,7 @@ fig_convert(dir, silent = TRUE)
 Returns a table with column of text links and text labels.
 }
 \description{
-Given a directory will convert all pdf's to tif's to
+Given a directory will convert all pdf's to pngs's to
 allow RMarkdown rendering to look pretty. Requires the
 R magick package to work.
 }
