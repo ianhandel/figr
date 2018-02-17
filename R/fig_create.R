@@ -41,11 +41,11 @@ fig_create <- function(filenames = NULL,
       index = stringr::str_pad(index, 3, "left", 0),
       link = glue::glue_data(
         .,
-        "[link{index}](#link{index})"
+        "<a href=\"#link{index}\">link{index}</a>"
       ),
       label = glue::glue_data(
         .,
-        "<a id=\"link{index}\"></a>"
+        "<a name=\"link{index}\"></a>"
       )
     ) %>%
     dplyr::arrange(filenames)
@@ -57,7 +57,4 @@ fig_create <- function(filenames = NULL,
   tbl
 }
 
-# <a name="top"></a>
 
-
-# <a href="#top">link to top</a>
