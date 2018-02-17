@@ -15,6 +15,7 @@
 #'
 
 fig_table <- function(fig_tbl, show_all = FALSE) {
+  fig_tbl <- dplyr::select(fig_tbl, -label)
   if (show_all) {
     knitr::kable(fig_tbl)
   } else {
